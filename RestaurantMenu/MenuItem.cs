@@ -25,5 +25,16 @@ namespace RestaurantMenu
         public MenuItem(string name, double price, string description, string category)
             : this(name, price, description, category, false) { }
 
+        public override bool Equals(object obj)
+        {
+            return obj is MenuItem item &&
+                   Name == item.Name &&
+                   Category == item.Category;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, Category);
+        }
     }
 }
