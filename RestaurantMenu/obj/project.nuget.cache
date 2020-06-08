@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "t7k5uyb8z/oMQi7SKal0SFOuEaKlsOjlS7wNODqIwT+ocTeYlLfmRmvsh/bbnP4ChvPSCt5/nQ23sk4/9tujRA==",
+  "success": true,
+  "projectFilePath": "D:\\LC_Classwork\\C# Projects\\Chapter 4 Studio\\RestaurantMenu\\RestaurantMenu\\RestaurantMenu.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mitch\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
