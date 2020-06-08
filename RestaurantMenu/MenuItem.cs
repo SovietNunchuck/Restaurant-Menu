@@ -22,5 +22,8 @@ namespace RestaurantMenu
             this.IsNew = isNew;
         }
 
+        public MenuItem(string name, double price, string description, string category)
+            : this(name, price, description, category, false) { }
+
     }
 }

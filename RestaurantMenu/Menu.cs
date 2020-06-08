@@ -7,7 +7,7 @@ namespace RestaurantMenu
     class Menu
     {
         public List<MenuItem> CurrentMenuItems { get; set; } //= new List<MenuItem>();
-        private static DateTime lastUpdated = new DateTime(2020, 6, 5);
+        public static DateTime lastUpdated = new DateTime(2020, 6, 5);
 
         public Menu(List<MenuItem> currentMenuItems)
         {
@@ -18,6 +18,7 @@ namespace RestaurantMenu
         {
             if (action == "add")
             {
+                item.IsNew = true;
                 CurrentMenuItems.Add(item);
             }
             else if (action == "remove")
@@ -27,22 +28,48 @@ namespace RestaurantMenu
             lastUpdated = DateTime.Today;
         }
 
+
+
         public override string ToString()
         {
-            string formattedMenu = "";
+            Console.WriteLine("Welcome to Elefante!\n*****\n");
+            string userChoice = "";
             int counter = 0;
-            foreach (MenuItem item in CurrentMenuItems)
+
+            while (userChoice != "3")
             {
-                counter++;
-                if (item.IsNew)
+                string formattedMenu = "";
+                Console.WriteLine("1 - View a sample menu item\n2 - View the whole menu\n3 - Quit");
+                userChoice = Console.ReadLine();
+
+                if (userChoice == "1")
                 {
-                    formattedMenu += "NEW ITEM!\n";
+                    Console.WriteLine("********************");
+                    Random rand = new Random();
+                    int menuIndex = rand.Next(CurrentMenuItems.Count);
+                    MenuItem item = CurrentMenuItems[menuIndex];
+                    formattedMenu += $"{item.Name} -- ${item.Price}\n" +
+                        $"Category: {item.Category}\n" +
+                        $"{item.Description}\n*****\n";
                 }
-                formattedMenu += $"{counter}.) {item.Name} -- ${item.Price}\n" +
-                    $"Category: {item.Category}\n" +
-                    $"{item.Description}\n";
+                else if (userChoice == "2")
+                {
+                    Console.WriteLine("********************");
+                    foreach (MenuItem item in CurrentMenuItems)
+                    {
+                        counter++;
+                        if (item.IsNew)
+                        {
+                            formattedMenu += "NEW ITEM!\n";
+                        }
+                        formattedMenu += $"{counter}.) {item.Name} -- ${item.Price}\n" +
+                            $"Category: {item.Category}\n" +
+                            $"{item.Description}\n*****\n";
+                    }
+                }
+                Console.WriteLine(formattedMenu);
             }
-            return formattedMenu;
+            return "";
         }
     }
 }
