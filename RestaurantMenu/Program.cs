@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RestaurantMenu
 {
@@ -6,7 +7,12 @@ namespace RestaurantMenu
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<MenuItem> ElefanteItems = new List<MenuItem>();
+            ElefanteItems.Add(new MenuItem("Spaghetti", 11.99, "Simply delicious.", "Main Course", true));
+
+            Menu ElefanteMenu = new Menu(ElefanteItems);
+
+            Console.WriteLine(ElefanteMenu.ToString());
         }
     }
 }
