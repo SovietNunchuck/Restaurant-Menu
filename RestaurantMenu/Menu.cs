@@ -67,7 +67,7 @@ namespace RestaurantMenu
                             $"{item.Description}\n*****\n";
                     }
                 }
-                Console.WriteLine(formattedMenu);
+                Console.WriteLine($"{formattedMenu}\nLast Updated: {lastUpdated:M/d/yyyy}");
             }
             return "";
         }
