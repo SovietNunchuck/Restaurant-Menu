@@ -28,11 +28,8 @@ namespace RestaurantMenu
             lastUpdated = DateTime.Today;
         }
 
-
-
-        public override string ToString()
+        private void NavigateMenu()
         {
-            Console.WriteLine("Welcome to Elefante!\n*****\n");
             string userChoice = "";
             int counter = 0;
 
@@ -69,6 +66,13 @@ namespace RestaurantMenu
                 }
                 Console.WriteLine($"{formattedMenu}\nLast Updated: {lastUpdated:M/d/yyyy}");
             }
+        }
+
+
+        public override string ToString()
+        {
+            Console.WriteLine("Welcome to Elefante!\n*****\n");
+            NavigateMenu();
             return "";
         }
     }
